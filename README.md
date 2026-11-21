@@ -20,7 +20,10 @@ Derivado del testeo de resiliencia del orquestador Domino V3, este repositorio a
 - Los datasets denominados **100B/300B** son simulaciones de telemetría y rendimiento. No ejecutan una prueba aritmética por exponente y no demuestran cobertura, ausencia de primos ni certificación de un rango.
 - Solo un resultado Lucas–Lehmer con residuo reproducible y verificación independiente puede denominarse certificación.
 - Las métricas internas `GL`, `Hodge Rigidity`, `Ghost Locus` y `UA` no son categorías matemáticas estándar ni sustituyen PRP, Lucas–Lehmer o la validación de GIMPS.
-- La prueba espectral Mersenne–Riemann es calibración supervisada sobre exponentes conocidos. Se considera exploratoria hasta superar un protocolo preregistrado con datos nuevos y controles locales.
+
+## Separación de dominios
+
+La investigación de ceros de Riemann fue migrada a [Gahenax/Riemman-Zero](https://github.com/Gahenax/Riemman-Zero). Este repositorio conserva únicamente la línea Mersenne y su infraestructura compartida.
 
 ## Estado de la Misión
 Consultar `MERSENNE_OPERATIONAL_LOG.md` para el registro de exponentes certificados y misiones de fragilidad.

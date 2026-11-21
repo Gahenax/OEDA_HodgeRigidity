@@ -1,6 +1,6 @@
 ---
 name: jules-heavy-compute
-description: Protocol for delegating high-compute experiments (Mersenne, Riemann, Hodge-PCP) to the Jules distributed lab.
+description: Protocol for delegating high-compute Mersenne experiments to the Jules distributed lab.
 ---
 
 # Jules Heavy Compute Skill
@@ -9,8 +9,7 @@ Jules acts as the **External Execution Layer (L2-External)** for the Gahenax Ker
 
 ## 🛠️ Core Capabilities
 1. **Work Order Generation**: Packaging scripts, parameters, and current checkpoints into a `jules_order_<id>.tar.gz`.
-2. **Deep Capture Integration**: High-frequency spectral analysis (Deep Capture 2.0) for Riemann zeros.
-3. **Mersenne Warp Delegation**: Distributing Lucas-Lehmer tests for large exponents (>2M).
+2. **Mersenne Warp Delegation**: Distributing Lucas-Lehmer tests for large exponents (>2M).
 
 ## 📜 Jules-Kernel Protocol (JXP)
 - **Handshake**: Every delegation must start with a `calibration_hint` (local performance metric $\kappa$).

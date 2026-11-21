@@ -1,7 +1,7 @@
 # RESEARCH_LOG.md — Bitácora Metodológica Mersene Gahenax
 
 ## 1. Scope
-Este log documenta la transición tecnológica de la investigación Riemann hacia la certificación determinista de primos grandes en el laboratorio **MERSENE GAHENAX**.
+Este log documenta la certificación determinista de números de Mersenne en el laboratorio **MERSENE GAHENAX**. El dominio Riemann se mantiene por separado en `Gahenax/Riemman-Zero`.
 
 ## 2. Pregunta Inicial
 ¿Es posible recalibrar un entorno de minería heurística para que produzca verdades matemáticas deterministas (LL) con la misma eficiencia y rigor de auditoría?
