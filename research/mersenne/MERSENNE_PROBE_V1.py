@@ -73,12 +73,27 @@ class MersenneEngine:
             print(f"  -> Resuming from checkpoint: {cp_file}")
             with open(cp_file, "r") as f:
                 data = json.load(f)
-                # Verify Hash to prevent corruption (Audit B2)
-                recorded_hash = data.get("hash")
+                # Bind the checkpoint to this exponent and validate its state.
+                # A valid hash alone is insufficient if the file was copied from
+                # a different exponent or contains an impossible iteration.
+                required = {"p", "s", "iter", "hash"}
+                if not required.issubset(data):
+                    print("  !!! [RED]: Checkpoint schema is incomplete.")
+                    return False, -1, 0.0, 1.0
+                if data["p"] != p:
+                    print(f"  !!! [RED]: Checkpoint exponent mismatch: expected {p}, got {data['p']}.")
+                    return False, -1, 0.0, 1.0
+                if not isinstance(data["iter"], int) or not 0 <= data["iter"] <= p - 2:
+                    print("  !!! [RED]: Checkpoint iteration is outside the LL range.")
+                    return False, -1, 0.0, 1.0
+                if not isinstance(data["s"], int) or not 0 <= data["s"] < m_p:
+                    print("  !!! [RED]: Checkpoint residue is outside the Mersenne modulus.")
+                    return False, -1, 0.0, 1.0
+                recorded_hash = data["hash"]
                 payload = f"{data['s']}-{data['iter']}"
                 if recorded_hash != hashlib.sha256(payload.encode()).hexdigest():
-                    print(f"  !!! [RED]: Checkpoint CORRUPTION detected.")
-                    return False, -1, 0.0, 1.0 # RED State
+                    print("  !!! [RED]: Checkpoint CORRUPTION detected.")
+                    return False, -1, 0.0, 1.0
                 s = data["s"]
                 start_iter = data["iter"]
 
