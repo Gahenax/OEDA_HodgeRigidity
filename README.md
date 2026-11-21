@@ -15,6 +15,13 @@ Derivado del testeo de resiliencia del orquestador Domino V3, este repositorio a
 
 > **Nota Legal S2 (No claims):** Este paquete fue generado mediante simulaciones estrictas de software y no constituye una certificación determinista oficial de GIMPS sobre ausencia de primos en esta cota. Es vendido/distribuido como un Asset de benchmark algorítmico y de estabilidad arquitectónica.
 
+## Estado científico y límites de las afirmaciones
+
+- Los datasets denominados **100B/300B** son simulaciones de telemetría y rendimiento. No ejecutan una prueba aritmética por exponente y no demuestran cobertura, ausencia de primos ni certificación de un rango.
+- Solo un resultado Lucas–Lehmer con residuo reproducible y verificación independiente puede denominarse certificación.
+- Las métricas internas `GL`, `Hodge Rigidity`, `Ghost Locus` y `UA` no son categorías matemáticas estándar ni sustituyen PRP, Lucas–Lehmer o la validación de GIMPS.
+- La prueba espectral Mersenne–Riemann es calibración supervisada sobre exponentes conocidos. Se considera exploratoria hasta superar un protocolo preregistrado con datos nuevos y controles locales.
+
 ## Estado de la Misión
 Consultar `MERSENNE_OPERATIONAL_LOG.md` para el registro de exponentes certificados y misiones de fragilidad.
 
